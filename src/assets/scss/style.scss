@@ -1,0 +1,140 @@
+$color-light:#8c0303;
+$bold:600;
+$overloap-bg:rgba(0,0,0,.8);
+
+
+%box-shadow {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+%text-button{
+    background:$color-light;
+    color: #fff;
+    border-color: $color-light;
+    font-size: 16px;
+    font-weight: $bold;
+    margin-top: 10px;
+}
+
+.logo-text a {
+    color:$color-light;
+    font-size: 30px;
+    font-weight: $bold;
+}
+.menu .navbar-nav {
+    margin: auto;
+}
+a.nav-link {
+    color: $color-light;
+    font-size: 16px;
+}
+.login-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.login button {
+    border-color: $color-light;
+    color: $color-light;
+    border-radius: 4px;
+}
+.signup button {
+    background: $color-light;
+    border-color: $color-light;
+    border-radius: 4px;
+    color: #fff;
+}
+.banner img {
+    max-width: 100%;
+}
+.home-banner {
+    position: relative;
+}
+.banner-search {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 500px;
+    margin: auto;
+    display: table;
+    transform: translatey(-50%);
+   
+}
+.search {
+    background: #8e9da2d6;
+    padding: 25px;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.search input[type="search"] {
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    width: 80%;
+}
+input[type="button"] {
+    background: $color-light;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+}
+
+//================login page detail=========================
+.login-page {
+    @extend %box-shadow;
+    .login {
+        width: 500px;
+        margin: 10px auto;
+        max-width: 100%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px -2px;
+        position: relative;
+    }
+    .login input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .textbox {
+        margin-bottom: 20px;
+    }
+    .logo-icon {
+        color: $color-light;
+        font-size: 30px;
+        font-weight: $bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header-close {
+        text-align: right;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        a{
+            cursor: pointer;
+        }
+    }
+    .submit-btn input {
+        @extend %text-button
+    }
+}
+.overloap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: $overloap-bg;
+}
