@@ -13,10 +13,11 @@ import { useSelector } from "react-redux";
 
 function App() {
   const auth = useSelector(state =>{
-   return state.auth
-  }
-     
-     );
+        return state.auth
+    }
+  );
+  
+  
   return (
     <div className="App">
          <Routes />

@@ -4,8 +4,14 @@ import { signup } from "../../store/actions";
 import axios from "axios"
 const Signup = () => {
     
-          const dispatch =useDispatch();
-   
+        const dispatch =useDispatch();
+        const state ={
+            name:"",
+            email:"",
+            mobile:"",
+            password:""
+        }
+       
         return(
             <div className="login-page">
             <div className="login">
@@ -28,6 +34,14 @@ const Signup = () => {
                         </label>
                         <div>
                             <input type="text" placeholder="Enter email" id="email_id" />
+                        </div>  
+                    </div>
+                    <div className="emailid textbox">
+                        <label>
+                            Mobile
+                        </label>
+                        <div>
+                            <input type="text" placeholder="Enter mobile" id="mobile" />
                         </div>  
                     </div>
                     <div className="password textbox">
