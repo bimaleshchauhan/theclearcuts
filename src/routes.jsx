@@ -5,7 +5,12 @@ import MainLayout from "./layout/MainLayout.jsx";
 import BlogLayout from "./layout/BlogLayout"
 // pages 
 import Home from "./containers/Home.jsx";
-import Aboutus from "./containers/aboutus.jsx"
+import Aboutus from "./containers/aboutus.jsx";
+import Blogs from "./containers/blogs.jsx"
+
+import CreateBlog from "./containers/create-blog.jsx";
+
+import Error404 from "./containers/error/error404.jsx"
 
 
 class Routes extends Component {
@@ -25,6 +30,29 @@ class Routes extends Component {
                         layout={BlogLayout}
                         component={Aboutus}
                         />
+                    
+                        <LayoutRoute
+                        exact
+                        path="/create-blog"
+                        layout={MainLayout}
+                        component={CreateBlog}
+                        />
+                       
+                    
+
+                        <LayoutRoute
+                        exact
+                        path={["/:id/","/:id/:sub_id"]}
+                        layout={BlogLayout}
+                        component={Blogs}
+                        />  
+
+                        <LayoutRoute
+                        exact
+                        path="/404"
+                        layout={MainLayout}
+                        component={Error404}
+                        />  
                 
                </Switch>
            </Router>

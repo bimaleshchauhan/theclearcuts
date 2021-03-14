@@ -16,9 +16,20 @@ import { useSelector } from "react-redux";
 //   }
 
 const Header = () => {
+    const [detail, setDetails] = useState("")
     const user = useSelector(state =>{
-        return state.auth    
+        return state.auth.user_details   
     })
+    useEffect(() =>{
+        if(user){
+            setDetails(user);
+            localStorage.setItem("user_details", user);
+        }
+        else{
+          setDetails(localStorage.getItem("user_details"))
+        }
+    })
+
    
     return(
         <header className="header">
@@ -31,7 +42,7 @@ const Header = () => {
                         <Navbar />
                     </div>
                     <div className="col-2">
-                       {user.user_details && user.user_details.success==true?<User data={user.user_details} />:<Login />} 
+                       {detail && detail.success==true?<User data={detail} />:<Login />} 
                     </div>
                 </div> 
             </div>

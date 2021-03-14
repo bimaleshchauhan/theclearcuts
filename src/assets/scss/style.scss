@@ -1,6 +1,8 @@
 $color-light:#8c0303;
 $bold:600;
 $overloap-bg:rgba(0,0,0,.8);
+$border:1px solid #ccc;
+
 
 
 %box-shadow {
@@ -21,12 +23,17 @@ $overloap-bg:rgba(0,0,0,.8);
     font-weight: $bold;
     margin-top: 10px;
 }
+%text-btn {
+    border: none;
+    background: none;
+}
 body{
     &.modals {
         overflow: hidden;
     }
     a{
         cursor: pointer;
+        text-decoration: none !important;
     }
     .arrow {
         border: solid black;
@@ -40,15 +47,19 @@ body{
       }
 }
 .header{
+    box-shadow: 0px 0px 20px -10px;
     .user-profile{
-        margin-top: 15px;
         position: relative;
         .user-name {
-            font-size: 18px;
+            font-size: 37px;
+            text-align: right;
+            button{
+                @extend %text-btn;
+            }
         }
         .drop-down {
             position: absolute;
-            top: 40px;
+            top: 55px;
             z-index: 9;
             background-color: #fff;
             border-radius: 4px;
@@ -135,7 +146,92 @@ input[type="button"] {
     border-radius: 0 4px 4px 0;
     color: #fff;
 }
-
+.blog{
+    margin: 50px auto;
+    // .left-sidebar{
+    // // border-right: $border;
+    // }
+    // .right-sidebar{
+    //     // border-left: $border;
+    // }
+    .blogs{
+        .blog-item{
+            .title {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .content {
+                line-height: 30px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+.create-blog{
+    .text-editor {
+        height: 500px;
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+    .page--title {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .title-text{
+        input[type="text"] {
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+    }
+    .submit-blog{
+        margin-bottom: 30px;
+        text-align: center;
+        button{
+           @extend %text-button;
+           border-radius: 5px;
+           padding: 10px;
+        }
+    }
+    
+}
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #252942;
+    color: #d6d6d6;
+    .f-upper{
+        padding-bottom: 30px;
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0px;
+        }
+        li {
+            display: inline-block;
+            padding: 0 10px;
+            border-right: 1px solid;
+            color: #ccc;
+            line-height: 15px;
+            &:last-child{
+                border: none;
+            }
+            a{
+                color: #a7a7a7;
+                &:hover{
+                    color: #ccc;
+                }
+            }
+        }
+    }
+    .f-lower {
+        border-top: 1px solid #000000;
+        box-shadow: 0px -1px 0px 0px #484141;
+        padding-top: 30px;
+    }
+}
 //================login page detail=========================
 .login-page {
     @extend %box-shadow;

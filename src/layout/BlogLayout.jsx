@@ -54,9 +54,9 @@ class MainLayout extends React.Component {
            <Header />
             <div className="main-body blog container">
                 <div className="row">
-                    <LeftSidebar class="left-sidebar col-3" />
-                    <div className="col-6">{children}</div>
-                    <RightSidebar class="right-sidebar col-3" />
+                    <LeftSidebar class="left-sidebar col-2" />
+                       <div className="col-8">{children}</div>
+                    <RightSidebar class="right-sidebar col-2" />
                 </div>
             </div>
            <Footer />
