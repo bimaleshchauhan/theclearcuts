@@ -1,32 +1,36 @@
 import {useState} from 'react';
 import { useDispatch } from "react-redux";
-import { login } from "../../store/actions";
+import { login, userDetails } from "../../store/actions";
 import axios from "axios"
 
 
 const Login = () => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const dispatch =useDispatch();
     
-    const handleSubmit =(e) =>{
+    const loginSubmit =(e) =>{
         e.preventDefault();
         // console.log("state", email)
          axios.post("http://13.232.108.235:1337/api/sign_in",{
             email:email,
             password:password
          }).then(response =>{
-             console.log("response", response)
+            if(response.data.success){
+                dispatch(userDetails(response.data))
+                dispatch(login(false)) 
+
+            }
          })
     }
     return(
-        <div className="login-page">
+     <div className="login-page">
         <div className="login">
             <div className="header-close"><a  onClick={() => dispatch(login(false))}>✖</a></div>   
             <div className="logo-icon">
                     TheClearCuts  
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={loginSubmit}>
                 <div className="emailid textbox">
                     <label>
                         Email
@@ -50,7 +54,7 @@ const Login = () => {
                 </div>
             </form>
         </div>
-        </div>
+    </div>
     )
     
 }

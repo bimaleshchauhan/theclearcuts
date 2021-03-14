@@ -17,7 +17,7 @@ const Navbar = (props) =>{
                     <a className="nav-link" href="#">About story</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Write</a>
+                    <a className="nav-link" href="/create-blog">Write</a>
                 </li>
                 {/* <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,6 +1,7 @@
 const initialState = {
     login_popup:false,
-    signup:false
+    signup:false,
+    user_details:""
 } 
 function Auth(state=initialState, action){
     const {type, payload} = action
@@ -15,6 +16,11 @@ function Auth(state=initialState, action){
                ...state,
                signup:payload
            }
+        case 'USER_DETAILS':
+            return{
+                ...state,
+                user_details:payload
+            }   
         default:
             return state   
     }

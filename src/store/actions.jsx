@@ -12,6 +12,15 @@ export const signup = (nr) =>{
         payload:nr
     }
 }
+// user detail when signin
+
+export const userDetails = (nr) =>{
+    return{
+        type:"USER_DETAILS",
+        payload:nr
+    }
+}
+
 // add new class in body tag for modals
 const toggleModalClass =(data) =>{
     if(data){

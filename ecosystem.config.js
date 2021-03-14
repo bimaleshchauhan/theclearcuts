@@ -32,6 +32,17 @@ module.exports = {
               'NODE_ENV': 'development',
           }
       },
+      'dev': {
+        'user': 'ubuntu',
+        'host': '13.232.108.235',
+        'ref': 'origin/dev',
+        'repo': 'git@github.com:bimaleshchauhan/theclearcuts.git',
+        'path': '/home/ubuntu/theclearcuts-front-end',
+        'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env development && npm run build && git reset --hard',
+        'env': {
+            'NODE_ENV': 'development',
+        }
+    },
       "staging": {
           'user': 'ubuntu',
           'host': '13.232.108.235',

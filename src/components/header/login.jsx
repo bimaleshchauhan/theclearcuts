@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { login, signup } from "../../store/actions";
-const Login = (props) =>{
+const Login = () =>{
     const dispatch =useDispatch();
     
     return(
