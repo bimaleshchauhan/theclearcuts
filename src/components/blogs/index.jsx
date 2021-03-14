@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const blogpage = (props) =>{
       console.log("dfsfdfs", props)
 
@@ -10,13 +11,13 @@ const blogpage = (props) =>{
 
       if(props.item.id===props.id){
         return(
-            <div className="blog-item">
+            <div className="blog-item ql-snow">
                 <div className="title">
                     {props.item.title}
                 </div> 
                 <div className="about-user">
                 </div> 
-                <div className="content">
+                <div className="content ql-editor">
                    <div dangerouslySetInnerHTML={rawMarkup(props.item.contents)} />
                    
                 </div>
