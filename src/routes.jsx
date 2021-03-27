@@ -52,7 +52,8 @@ class Routes extends Component {
                         path="/404"
                         layout={MainLayout}
                         component={Error404}
-                        />  
+                        />
+                        <LayoutRoute layout={MainLayout} component={Error404}/> 
                 
                </Switch>
            </Router>

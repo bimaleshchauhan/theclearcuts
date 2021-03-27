@@ -46,6 +46,20 @@ body{
         -webkit-transform: rotate(45deg);
       }
 }
+.error-404 {
+    text-align: center;
+    padding: 50px 0;
+    .e-404 {
+        color: $color-light;
+        font-size: 11rem;
+        font-weight: 600;
+        line-height: 15rem;
+    }
+    .page-not-found {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
 .header{
     box-shadow: 0px 0px 20px -10px;
     .user-profile{

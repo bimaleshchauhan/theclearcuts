@@ -5,7 +5,7 @@ const error404 = () =>{
            <div className="e-404">
                  404
            </div>
-           <div>
+           <div className="page-not-found">
                Page Not Found
            </div>
         </div>
