@@ -31,7 +31,7 @@ const Signup = () => {
         return(
             <div className="login-page">
             <div className="login">
-               <div className="header-close"><a onClick={() => dispatch(signup(false))}>✖</a></div>   
+               <div className="header-close"><button onClick={() => dispatch(signup(false))}>✖</button></div>   
                 <div className="logo-icon">
                      TheClearCuts  
                 </div>

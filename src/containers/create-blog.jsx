@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState } from 'react';
 
 import { useQuill } from "react-quilljs";
 import axios from "axios"
@@ -7,19 +7,19 @@ const BlogCreate = () =>{
   //  const { quill, quillRef } = useQuill();
      const [title,setTitle] = useState("")
     
-    var toolbarOptions = {
-        handlers: {
-          // handlers object will be merged with default handlers object
-          'link': function(value) {
-            if (value) {
-              var href = prompt('Enter the URL');
-              this.quill.format('link', href);
-            } else {
-              this.quill.format('link', false);
-            }
-          }
-        }
-      }
+    // var toolbarOptions = {
+    //     handlers: {
+    //       // handlers object will be merged with default handlers object
+    //       'link': function(value) {
+    //         if (value) {
+    //           var href = prompt('Enter the URL');
+    //           this.quill.format('link', href);
+    //         } else {
+    //           this.quill.format('link', false);
+    //         }
+    //       }
+    //     }
+    //   }
 
       
     const theme = 'snow';
@@ -63,7 +63,7 @@ const BlogCreate = () =>{
       'color', 'background',
       'clean', ];
     
-      const {quill, quillRef, Quill } = useQuill({ theme, modules, formats });
+      const {quill, quillRef } = useQuill({ theme, modules, formats });
 
     //   var editor_content = quill.container.firstChild.innerHTML
     // console.log("editor_content", editor_content)

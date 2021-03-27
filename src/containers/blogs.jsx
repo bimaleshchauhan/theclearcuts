@@ -1,5 +1,4 @@
 import {useState, useRef, useEffect} from 'react';
-import { Redirect } from "react-router-dom";
 import axios from "axios";
 import BlogPage from "../components/blogs"
 

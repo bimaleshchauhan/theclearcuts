@@ -244,6 +244,12 @@ footer {
         border-radius: 4px;
         box-shadow: 0 0 10px -2px;
         position: relative;
+        .header-close {
+            button {
+                border: none;
+                background: transparent;
+            }
+        }
     }
     .login input {
         width: 100%;

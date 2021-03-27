@@ -42,7 +42,7 @@ const Header = () => {
                         <Navbar />
                     </div>
                     <div className="col-2">
-                       {detail && detail.success==true?<User data={detail} />:<Login />} 
+                       {detail && detail.success===true?<User data={detail} />:<Login />} 
                     </div>
                 </div> 
             </div>

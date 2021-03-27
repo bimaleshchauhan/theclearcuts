@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="App">
          <Routes />
-         {auth.login_popup==true? <div><Login /><div className="overloap"></div></div>:""}
-         {auth.signup==true? <div><Signup /><div className="overloap"></div></div>:""}
+         {auth.login_popup===true? <div><Login /><div className="overloap"></div></div>:""}
+         {auth.signup===true? <div><Signup /><div className="overloap"></div></div>:""}
          
     </div>
   );
