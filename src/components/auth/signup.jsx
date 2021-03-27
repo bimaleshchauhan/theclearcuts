@@ -14,7 +14,7 @@ const Signup = () => {
         const handleSubmit =(e) =>{
             e.preventDefault();
             // console.log("state", email)
-            axios.post("http://13.232.108.235:1337/api/sign_up",{
+            axios.post(process.env.REACT_APP_API_KEY+"/v1/api/user/sign_up",{
                 firstName:fname,
                 lastName:lname,
                 phone:mobile,

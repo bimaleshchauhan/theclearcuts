@@ -79,7 +79,7 @@ const BlogCreate = () =>{
 
    const submitBlog =() =>{
         let editor_content = quill.container.firstChild.innerHTML;
-        axios.post("http://13.232.108.235:1337/v1/api/article/create",{
+        axios.post(process.env.REACT_APP_API_KEY+"/v1/api/article/create",{
             title:title,
             contents:editor_content,
             user: "603a437de86a1bd5ac7a91ff"

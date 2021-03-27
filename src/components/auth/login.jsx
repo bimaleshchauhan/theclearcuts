@@ -19,11 +19,11 @@ const Login = () => {
                     name:'required',
                     message:'Email address is required'
                 },
-                {
-                    name:'regex',
-                    message:'Email address is invalid',
-                    expression:'^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
-                },
+                // {
+                //     name:'regex',
+                //     message:'Email address is invalid',
+                //     expression:'^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+                // },
             ]
         },
         {
@@ -51,11 +51,9 @@ const Login = () => {
    // const [email, setEmail] = useState("");
     //const [password, setPassword] = useState("");
     const dispatch =useDispatch();
-    
     function loginSubmit(e){
-        console.log("fdfsfsf", values)
          //e.preventDefault();
-         axios.post("http://13.232.108.235:1337/api/sign_in",values).then(response =>{
+         axios.post(process.env.REACT_APP_API_KEY+"/v1/api/user/sign_in",values).then(response =>{
             if(response.data.success){
                 dispatch(userDetails(response.data))
                 dispatch(login(false)) 
