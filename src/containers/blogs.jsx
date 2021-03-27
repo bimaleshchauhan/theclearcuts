@@ -7,7 +7,7 @@ const Blogs = ({match:{params:{id, sub_id}}}) =>{
     const isMount = useRef(true);
     useEffect(() =>{
         if(isMount.current){
-            axios.get("http://13.232.108.235:1337/v1/api/article/get_all")
+            axios.get(process.env.REACT_APP_API_KEY+"/v1/api/article/get_all")
             .then(response =>{
                 if(response.data.success){
                     if(response.data.data){
