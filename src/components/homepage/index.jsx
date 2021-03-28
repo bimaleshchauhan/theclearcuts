@@ -1,4 +1,4 @@
-import Banner from './banner'
+import Banner from './banner';
 const Index = (props) =>{
     return(
         <section className="section">

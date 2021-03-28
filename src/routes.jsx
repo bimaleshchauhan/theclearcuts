@@ -16,7 +16,7 @@ import Error404 from "./containers/error/error404.jsx"
 class Routes extends Component {
     render() {
           return(
-            <Router>
+            <Router basename="/">
                 <Switch>
                    <LayoutRoute
                         exact
@@ -30,25 +30,26 @@ class Routes extends Component {
                         layout={BlogLayout}
                         component={Aboutus}
                         />
-                    
                         <LayoutRoute
                         exact
                         path="/create-blog"
                         layout={MainLayout}
                         component={CreateBlog}
                         />
-                       
-                    
-
-                        <LayoutRoute
+                        {/* <LayoutRoute
                         exact
                         path={["/:id/","/:id/:sub_id"]}
+                        layout={BlogLayout}
+                        component={Blogs}
+                        />   */}
+                        <LayoutRoute
+                        exact
+                        path={"/:id"}
                         layout={BlogLayout}
                         component={Blogs}
                         />  
 
                         <LayoutRoute
-                        exact
                         path="/404"
                         layout={MainLayout}
                         component={Error404}

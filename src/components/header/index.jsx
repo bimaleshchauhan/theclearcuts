@@ -28,7 +28,7 @@ const Header = () => {
         else{
           setDetails(localStorage.getItem("user_details"))
         }
-    })
+    },[user])
 
    
     return(

@@ -1,6 +1,7 @@
-
+import _ from "lodash"
 export default function validate(values, validators) {
         let errors = {};
+        
         if(validators && validators.length>0){
             validators.forEach(element => {
                 if(values==='submit'){
@@ -20,6 +21,7 @@ export default function validate(values, validators) {
             });
         }
         function validator(element) {
+            let arr_error =[]
             if(element.validate && element.validate.length>0){
                 element.validate.forEach(validator => {
                   let error = undefined;
@@ -31,11 +33,13 @@ export default function validate(values, validators) {
                      // error = customeValidator(validator);
                   }
                   if (error) {
-                      errors[element.type] = error;
+                    arr_error.push(error)
+                      ;
                    }
                   
               })
             }
+            errors[element.type] = _.first(arr_error)
         }
         function requiredValidate(validator, element) {
             let res = checkEmpty(validator.message, element);
@@ -48,7 +52,7 @@ export default function validate(values, validators) {
 
             if (!isNil(validator.expression)) {
                 let expression = validator.expression;
-                let re = new RegExp(expression.trim('/'));
+                let re = new RegExp(_.trim(expression, '/'));
                 if (element.type == "FileUpload") {
                     if (!re.test(element.value)) {
                         return msg(validator.message);

@@ -1,9 +1,9 @@
-import {useState} from 'react';
+//import {useState} from 'react';
 import { useDispatch } from "react-redux";
 import { login, userDetails } from "../../store/actions";
 import FormUser from "../../hoc/FormUser"
 import validator from "../../hoc/Validator"
-import axios from "axios"
+import axios from "axios";
 
 
 
@@ -19,11 +19,11 @@ const Login = () => {
                     name:'required',
                     message:'Email address is required'
                 },
-                // {
-                //     name:'regex',
-                //     message:'Email address is invalid',
-                //     expression:'^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
-                // },
+                {
+                    name:'regex',
+                    message:'Email address is invalid',
+                    expression:'/^([A-Za-z0-9]+[_.]?)+[A-Za-z0-9]+@[a-zA-Z_]+?([.][a-zA-Z]{2,3}){1,2}$/'
+                },
             ]
         },
         {
@@ -34,7 +34,8 @@ const Login = () => {
                 {
                     name:'required',
                     message:'Password is required'
-                }
+                },
+               
             ]
         }
     ]
