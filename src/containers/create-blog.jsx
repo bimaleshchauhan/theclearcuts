@@ -7,7 +7,7 @@ import axios from "axios"
 
 const BlogCreate = () =>{
   //  const { quill, quillRef } = useQuill();
-     const [title,setTitle] = useState("");
+    
 
      const form =[
         {
