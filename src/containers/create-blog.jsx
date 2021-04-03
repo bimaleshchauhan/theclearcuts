@@ -1,11 +1,36 @@
 import React, {useState } from 'react';
 
 import { useQuill } from "react-quilljs";
+import FormUser from "../hoc/FormUser";
+import validator from "../hoc/Validator";
 import axios from "axios"
 
 const BlogCreate = () =>{
   //  const { quill, quillRef } = useQuill();
-     const [title,setTitle] = useState("")
+     const [title,setTitle] = useState("");
+
+     const form =[
+        {
+            type:"blog_title",
+            required:true,
+            value:"",
+            validate:[
+                {
+                    name:'required',
+                    message:'Blog title is required'
+                },
+                
+            ]
+        },
+    ]
+
+     const {
+        values,
+        errors,
+        validation,
+        handleChange,
+        handleSubmit,
+      } = FormUser(submitBlog, validator, form);
     
     // var toolbarOptions = {
     //     handlers: {
@@ -77,10 +102,10 @@ const BlogCreate = () =>{
 //   }, [quill]);
    
 
-   const submitBlog =() =>{
+   function submitBlog (){
         let editor_content = quill.container.firstChild.innerHTML;
         axios.post(process.env.REACT_APP_API_KEY+"/v1/api/article/create",{
-            title:title,
+            title:values.title,
             contents:editor_content,
             user: "603a437de86a1bd5ac7a91ff"
          }).then(response =>{
@@ -104,14 +129,17 @@ const BlogCreate = () =>{
                         <div className="blog-title">
                             <label htmlFor="">Blog Title</label>
                             <div className="title-text">
-                                <input type="text" onInput={e => setTitle(e.target.value)} placeholder="Enter blog title"  />
+                                <input type="text" value={values.title || ''} name="blog_title" onInput={handleChange} placeholder="Enter blog title"  />
+                                {errors.blog_title && (
+                                    <p className="help is-danger">{errors.blog_title}</p>
+                                )}
                             </div>
                         </div>
                         <div className="text-editor">
                             <div ref={quillRef} />
                         </div>
                         <div className="submit-blog">
-                            <button onClick={submitBlog}>Submit</button>
+                            <button onClick={handleSubmit}>Submit</button>
                         </div>
                     </div> 
                 </div>
